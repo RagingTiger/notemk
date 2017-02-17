@@ -7,7 +7,7 @@ make_note() {
 
   # check for project_dir variable
   pdir=
-  if [ $PROJECT_DIR ]; then
+  if [ $PROJECT_DIR ] && [ $PROJEC_DIR =~ $PWD ]; then
     pdir="$PROJECT_DIR."
   else
     pdir=""
@@ -32,6 +32,7 @@ make_note() {
 
     # write header
     echo "Entry: $DAY, $MONTH $day, $YEAR" >> "$note"
+    echo "  -" >> "$note"
 
     # if arg 3
     case $3 in
