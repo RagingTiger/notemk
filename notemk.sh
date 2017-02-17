@@ -32,6 +32,14 @@ make_note() {
 
     # write header
     echo "Entry: $DAY, $MONTH $day, $YEAR" >> "$note"
+
+    # if arg 3
+    case $3 in
+      "ed")
+        # open for writing
+        nano $note
+        ;;
+    esac
   fi
 }
 
@@ -52,7 +60,7 @@ main() {
   name=$( get_dir "$1" )
 
   # make note
-  make_note "$name" "$1"
+  make_note "$name" "$1" "ed"
 
 }
 
@@ -65,10 +73,5 @@ if [ -z "$1" ]; then
 
 else
   # check args
-  case "$1" in
-    "path") ;;
-    "p") ;;
-    "ed") ;;
-    "e") ;;
-  esac
+  main "$1"
 fi
