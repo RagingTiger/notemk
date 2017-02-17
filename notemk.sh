@@ -64,6 +64,11 @@ if [ -z "$1" ]; then
   main "$dir"
 
 else
-  # use arg 1
-  main "$1"
+  # check args
+  case "$1" in
+    "path") ;;
+    "p") ;;
+    "ed") ;;
+    "e") ;;
+  esac
 fi
