@@ -47,10 +47,20 @@ The second option requires nothing on your part.
 Usage of the utility is simple:
 
 ```
-cd YourProject/data/notes/
+cd YourProject/data/
 notemk
 ```
 
 If you have the [autoenv](https://github.com/kennethreitz/autoenv) and the
 `.env` file setup, then a file named `YourProject.data.month.day.year.txt` will
 be created. Otherwise the file `data.month.day.year.txt` will be created.
+
+Your file will be located in a 'hidden' directory named `.notes`. For example
+in the first option:
+
+```
+ls YourProject/data/.notes/
+YourProject.data.month.day.year.txt
+```
+
+This is what will be created and stored in the hidden `.notes` directory 

@@ -3,7 +3,7 @@
 # functions
 make_dir() {
   # check if .note dir exists
-  ndir="$1/.note/"
+  ndir="$1/.notes/"
   if [ -d "$ndir" ]; then
     :
   else
@@ -27,7 +27,7 @@ make_note() {
   make_dir $2
 
   # note name
-  note="$2/.note/$pdir$1.$dt.txt"
+  note="$2/.notes/$pdir$1.$dt.txt"
 
   # check if note exists
   if [ -e "$note" ]; then
