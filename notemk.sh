@@ -72,10 +72,14 @@ make_note() {
 get_dir() {
   # check name
   base="`basename $1`"
-  note_str="note"
+  note_str=".notes"
   if [[ $base =~ $note_str ]]; then
     dir="`dirname $1`"
     get_dir "$dir"
+
+  elif [[ $base =~ ".." ]]; then
+    :
+
   else
     echo "$base"
   fi
