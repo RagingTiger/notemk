@@ -1,5 +1,5 @@
 ## About
-The **notemk** utility was originally created for the [CoDir](https://github.com/RagingTiger/CoDir) project, but it has become clear
+The **notemk** utility was originally created for the [CoDir](https://ragingtiger.github.io/CoDir/) project, but it has become clear
 that it has value outside of this project
 
 ## Installation
