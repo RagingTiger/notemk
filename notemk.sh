@@ -1,6 +1,16 @@
 #!/usr/bin/env bash
 
 # functions
+make_dir() {
+  # check if .note dir exists
+  ndir="$1/.note/"
+  if [ -d "$ndir" ]; then
+    :
+  else
+    mkdir "$ndir"
+  fi
+}
+
 make_note() {
   # get date
   dt="`date '+%m.%d.%y'`"
@@ -13,8 +23,11 @@ make_note() {
     pdir=""
   fi
 
+  # check if .note dir exists
+  make_dir $2
+
   # note name
-  note="$2/$pdir$1.$dt.txt"
+  note="$2/.note/$pdir$1.$dt.txt"
 
   # check if note exists
   if [ -e "$note" ]; then
