@@ -31,7 +31,19 @@ make_note() {
 
   # check if note exists
   if [ -e "$note" ]; then
+    # exists
     echo "File \"$note\" already exists"
+
+    # get answer for editing
+    answer=
+    echo -n "Do you want to edit it?[y|n]: "
+    read answer
+
+    # check answer
+    case $answer in
+      "y") nano "$note";;
+      "yes") nano "$note";;
+    esac
 
   else
     # create new note

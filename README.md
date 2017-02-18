@@ -7,7 +7,7 @@ To configure your environment to use the script follow the below steps. First
 clone and cd into the **notemk** repository:
 
 ```
-git clone https://github.com/RagingTiger/notmk
+git clone https://github.com/RagingTiger/notemk
 cd notemk/
 ```
 
@@ -63,4 +63,4 @@ ls YourProject/data/.notes/
 YourProject.data.month.day.year.txt
 ```
 
-This is what will be created and stored in the hidden `.notes` directory 
+This is what will be created and stored in the hidden `.notes` directory
