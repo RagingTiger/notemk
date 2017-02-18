@@ -7,7 +7,7 @@ make_note() {
 
   # check for project_dir variable
   pdir=
-  if [ $PROJECT_DIR ] && [ $PROJEC_DIR =~ $PWD ]; then
+  if [ $PROJECT_DIR ] && [[ $PROJEC_DIR =~ $PWD ]]; then
     pdir="$PROJECT_DIR."
   else
     pdir=""
