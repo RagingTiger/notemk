@@ -56,6 +56,7 @@ make_note() {
     YEAR="`date '+%Y'`"
 
     # write header
+    echo "" >> "$note"
     echo "Entry: $DAY, $MONTH $day, $YEAR" >> "$note"
     echo "  -" >> "$note"
 
