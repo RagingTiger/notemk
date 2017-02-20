@@ -15,9 +15,13 @@ make_note() {
   # get date
   dt="`date '+%m.%d.%y'`"
 
+  # get basename of PWD
+  pwdb=$(basename $PWD)
+
   # check for project_dir variable
   pdir=
-  if [ $PROJECT_DIR ] && [[ $PROJEC_DIR =~ $PWD ]]; then
+  if [ $PROJECT_DIR ] && [[ $PWD == *$PROJECT_DIR* ]] &&
+     [ $pwdb != $PROJECT_DIR ]; then
     pdir="$PROJECT_DIR."
   else
     pdir=""
