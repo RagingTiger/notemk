@@ -1,8 +1,22 @@
 #!/usr/bin/env bash
 
-# globals
-dt="`date '+%m.%d.%y'`"
+# globals: day, month, year
 note_str=".notes"
+dayname="$( date '+%A' )"
+monthname="$( date '+%B' )"
+monthnum="$( date '+%m' )"
+year="$( date '+%Y' )"
+
+# globals: day as a number (append 0 if less than 10)
+daynum=
+if [ 10 -lt $( date '+%d' ) ]; then
+  daynum=$( date '+%d' )
+else
+  daynum="0$( date '+%d' )"
+fi
+
+# final global: date string
+dt="$monthnum.$daynum.$year"
 
 # functions
 edit_file() {
@@ -10,15 +24,9 @@ edit_file() {
 }
 
 write_hdr() {
-  # get day, month, year
-  day="`date '+%d'`"
-  DAY="`date '+%A'`"
-  MONTH="`date '+%B'`"
-  YEAR="`date '+%Y'`"
-
   # write header
   echo "" >> "$1"
-  echo "Entry: $DAY, $MONTH $day, $YEAR" >> "$1"
+  echo "Entry: $dayname, $monthname $daynum, $year" >> "$1"
   echo "  -" >> "$1"
 }
 
