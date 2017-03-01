@@ -3,17 +3,10 @@
 # globals: day, month, year
 note_str=".notes"
 dayname="$( date '+%A' )"
+daynum=$( date '+%d' )
 monthname="$( date '+%B' )"
 monthnum="$( date '+%m' )"
 year="$( date '+%Y' )"
-
-# globals: day as a number (append 0 if less than 10)
-daynum=
-if [ 10 -lt $( date '+%d' ) ]; then
-  daynum=$( date '+%d' )
-else
-  daynum="0$( date '+%d' )"
-fi
 
 # final global: date string
 dt="$monthnum.$daynum.$year"
