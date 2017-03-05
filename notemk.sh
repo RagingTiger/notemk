@@ -65,22 +65,6 @@ get_dir() {
   fi
 }
 
-exists() {
-  # exists
-  echo "File \"$1\" already exists"
-
-  # get answer for editing
-  answer=
-  echo -n "Do you want to edit it?[y|n]: "
-  read answer
-
-  # check answer
-  case $answer in
-    "y") edit_file "$1";;
-    "yes") edit_file "$1";;
-  esac
-}
-
 make_note() {
   # get project dir
   pdir=$( check_pdir $2 )
@@ -97,7 +81,7 @@ make_note() {
   # check if note exists
   if [ -e "$note" ]; then
     # exists
-    exists $note
+    edit_file $note
 
   else
     # create new note
